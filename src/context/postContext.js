@@ -93,7 +93,7 @@ const PostContextProvider = ({ children }) => {
         type: SET_LOADING,
         payload: false,
       });
-      console.log("error");
+      toast.error(error.response.data.message);
     }
   };
 
