@@ -53,7 +53,7 @@ export const postReducer = (state, action) => {
         postItems: [...state.postItems],
       };
     case "SET_LOADING":
-      return { ...state, postsLoading: true };
+      return { ...state, postsLoading: payload };
     default:
       return state;
   }

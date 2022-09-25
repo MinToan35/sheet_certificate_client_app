@@ -87,6 +87,7 @@ const PostContextProvider = ({ children }) => {
   const deleteItems = async (id) => {
     dispatch({
       type: SET_LOADING,
+      payload: true,
     });
     try {
       const response = await axios.delete(`${apiUrl}/posts/${id}`);
@@ -99,9 +100,17 @@ const PostContextProvider = ({ children }) => {
         });
         return response.data;
       } else {
+	dispatch({
+          type: SET_LOADING,
+          payload: false,
+        });
         return response.data;
       }
     } catch (error) {
+      dispatch({
+          type: SET_LOADING,
+          payload: false,
+        });
       return error.response.data
         ? error.response.data
         : { success: false, message: "Server error" };
