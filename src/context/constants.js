@@ -1,7 +1,7 @@
 export const apiUrl =
   process.env.NODE_ENV !== "production"
-    ? "https://certificate-sheet-app.herokuapp.com/api"
-    : "https://certificate-sheet-server.herokuapp.com/api";
+    ? "http://localhost:5000/api"
+    : "https://certificate-sheet-app.herokuapp.com/api";
 
 export const LOCAL_STORAGE_TOKEN_NAME = "token";
 
