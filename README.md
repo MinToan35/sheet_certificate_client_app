@@ -3,7 +3,9 @@
 /*============== Admin =============*/
 
 Tài khoản: 
+
     + Tên: admin
+    
     + Mật khẩu: admin
 
 Ở input "Chọn tệp", chọn file "EHC-IN-3.5-22.1001.xlsx" để đúng format
@@ -13,7 +15,9 @@ Tài khoản:
 /*============== User =============*/
 
 Tài khoản: 
+
     + Tên: user
+    
     + Mật khẩu: user
 
 Người dùng tìm file theo số cuối sau dấu . của tên file (vd: 1001)
