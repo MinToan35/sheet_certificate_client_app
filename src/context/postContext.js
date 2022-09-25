@@ -35,6 +35,7 @@ const PostContextProvider = ({ children }) => {
   const getItems = async () => {
     dispatch({
       type: SET_LOADING,
+      payload: true,
     });
     try {
       const response = await axios.get(`${apiUrl}/posts`);
@@ -52,6 +53,7 @@ const PostContextProvider = ({ children }) => {
   const getItem = async (id) => {
     dispatch({
       type: SET_LOADING,
+      payload: true,
     });
     try {
       const response = await axios.get(`${apiUrl}/posts/search/${id}`);
@@ -70,6 +72,7 @@ const PostContextProvider = ({ children }) => {
   const addItems = async (newItems, name) => {
     dispatch({
       type: SET_LOADING,
+      payload: true,
     });
     try {
       const response = await axios.post(`${apiUrl}/posts`, {
@@ -100,7 +103,7 @@ const PostContextProvider = ({ children }) => {
         });
         return response.data;
       } else {
-	dispatch({
+        dispatch({
           type: SET_LOADING,
           payload: false,
         });
@@ -108,9 +111,9 @@ const PostContextProvider = ({ children }) => {
       }
     } catch (error) {
       dispatch({
-          type: SET_LOADING,
-          payload: false,
-        });
+        type: SET_LOADING,
+        payload: false,
+      });
       return error.response.data
         ? error.response.data
         : { success: false, message: "Server error" };
