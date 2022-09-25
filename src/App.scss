@@ -1,0 +1,72 @@
+table {
+  width: 100%;
+  background-color: #fff;
+}
+
+.error {
+  background-color: rgb(248, 101, 101);
+}
+
+.success {
+  background-color: #42ba96;
+}
+
+
+td,
+th {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  border: 1px solid #000;
+}
+
+
+
+
+
+.btn-add {
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.btn-add {
+  --border-right: 4px;
+  --text-stroke-color: rgb(255, 106, 107);
+  --animation-color: rgb(255, 106, 107);
+  --fs-size: 1.5rem;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 0.5px var(--text-stroke-color);
+
+  &.text-success {
+    --text-stroke-color: #fff;
+    --animation-color: #fff;
+  }
+
+  .hover-text {
+    position: absolute;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+
+  &:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+}
+
+select {
+  padding:  1rem;
+  border-radius: 1rem;
+}
