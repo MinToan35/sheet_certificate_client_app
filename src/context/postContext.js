@@ -83,8 +83,18 @@ const PostContextProvider = ({ children }) => {
         dispatch({ type: ADD_POST, payload: response.data.posts });
       } else {
         toast.error(response.data.message);
+        dispatch({
+          type: SET_LOADING,
+          payload: false,
+        });
       }
-    } catch (error) {}
+    } catch (error) {
+      dispatch({
+        type: SET_LOADING,
+        payload: false,
+      });
+      console.log("error");
+    }
   };
 
   const deleteItems = async (id) => {
