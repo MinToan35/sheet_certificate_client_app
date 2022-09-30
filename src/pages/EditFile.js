@@ -42,6 +42,12 @@ const EditFile = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postState]);
 
+  useEffect(() => {
+    showModal
+      ? (document.body.style.overflowX = "hidden")
+      : (document.body.style.overflowX = "auto");
+  }, [showModal]);
+
   const handleCertificate = () => {
     if (items) {
       for (let i = 0; i < items.length; i++) {
